@@ -12,10 +12,11 @@ class SokobanEnv1(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv1, self).__init__(
-            num_boxes=3, max_steps=200
-        )
+    def __init__(self, **kwargs):
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        super(SokobanEnv1, self).__init__(**kwargs)
+
 
 
 class SokobanEnv2(SokobanEnv):
@@ -23,21 +24,23 @@ class SokobanEnv2(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv2, self).__init__(
-            num_boxes=5, max_steps=200, num_gen_steps=40
-        )
+    def __init__(self, **kwargs):
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 5)
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 40)
+        super(SokobanEnv2, self).__init__(**kwargs)
 
 
 class SokobanEnv_Small0(SokobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
-
-    def __init__(self):
-        super(SokobanEnv_Small0, self).__init__(
-            dim_room=(7, 7), max_steps=200, num_boxes=1
-        )
+    
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 2)
+        super(SokobanEnv_Small0, self).__init__(**kwargs)
 
 
 class SokobanEnv_Small1(SokobanEnv):
@@ -45,10 +48,11 @@ class SokobanEnv_Small1(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv_Small1, self).__init__(
-            dim_room=(7, 7), max_steps=200, num_boxes=3
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        super(SokobanEnv_Small1, self).__init__(**kwargs)
 
 
 class SokobanEnv_Large0(SokobanEnv):
@@ -56,11 +60,12 @@ class SokobanEnv_Large0(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv_Large0, self).__init__(
-            dim_room=(13, 11), max_steps=300, num_boxes=3,
-            num_gen_steps=43
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 300)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 43)
+        super(SokobanEnv_Large0, self).__init__(**kwargs)
 
 
 class SokobanEnv_Large1(SokobanEnv):
@@ -68,11 +73,12 @@ class SokobanEnv_Large1(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv_Large1, self).__init__(
-            dim_room=(13, 11), max_steps=300, num_boxes=4,
-            num_gen_steps=43
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 300)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 4)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 43)
+        super(SokobanEnv_Large1, self).__init__(**kwargs)
 
 
 class SokobanEnv_Large1(SokobanEnv):
@@ -80,11 +86,12 @@ class SokobanEnv_Large1(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv_Large1, self).__init__(
-            dim_room=(13, 11), max_steps=300, num_boxes=5,
-            num_gen_steps=43
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 300)
+        kwargs['num_boxes'] = kwargs.get('num_boxes',5)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 43)
+        super(SokobanEnv_Large1, self).__init__(**kwargs)
 
 
 class SokobanEnv_Huge0(SokobanEnv):
@@ -92,11 +99,12 @@ class SokobanEnv_Huge0(SokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(SokobanEnv_Huge0, self).__init__(
-            dim_room=(13, 13), max_steps=300, num_boxes=5,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 13))
+        kwargs['max_steps'] = kwargs.get('max_steps', 300)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 5)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(SokobanEnv_Huge0, self).__init__(**kwargs)
 
 
 class FixedTargets_Env_v0(FixedTargetsSokobanEnv):
@@ -104,11 +112,12 @@ class FixedTargets_Env_v0(FixedTargetsSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(FixedTargets_Env_v0, self).__init__(
-            dim_room=(10, 10), max_steps=150, num_boxes=3,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (10, 10))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(FixedTargets_Env_v0, self).__init__(**kwargs)
 
 
 class FixedTargets_Env_v1(FixedTargetsSokobanEnv):
@@ -116,23 +125,24 @@ class FixedTargets_Env_v1(FixedTargetsSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(FixedTargets_Env_v1, self).__init__(
-            dim_room=(10, 10), max_steps=150, num_boxes=4,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (10, 10))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 4)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(FixedTargets_Env_v1, self).__init__(**kwargs)
 
 
 class FixedTargets_Env_v2(FixedTargetsSokobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
-
-    def __init__(self):
-        super(FixedTargets_Env_v2, self).__init__(
-            dim_room=(7, 7), max_steps=150, num_boxes=2,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 2)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(FixedTargets_Env_v2, self).__init__(**kwargs)
 
 
 class FixedTargets_Env_v3(FixedTargetsSokobanEnv):
@@ -140,11 +150,12 @@ class FixedTargets_Env_v3(FixedTargetsSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(FixedTargets_Env_v3, self).__init__(
-            dim_room=(7, 7), max_steps=150, num_boxes=3,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(FixedTargets_Env_v3, self).__init__(**kwargs)
 
 
 class PushAndPull_Env_v0(PushAndPullSokobanEnv):
@@ -152,11 +163,12 @@ class PushAndPull_Env_v0(PushAndPullSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(PushAndPull_Env_v0, self).__init__(
-            dim_room=(10, 10), max_steps=150, num_boxes=3,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (10, 10))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(PushAndPull_Env_v0, self).__init__(**kwargs)
 
 
 class PushAndPull_Env_v1(PushAndPullSokobanEnv):
@@ -164,11 +176,12 @@ class PushAndPull_Env_v1(PushAndPullSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(PushAndPull_Env_v1, self).__init__(
-            dim_room=(10, 10), max_steps=150, num_boxes=4,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (10, 10))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 4)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(PushAndPull_Env_v1, self).__init__(**kwargs)
 
 
 class PushAndPull_Env_v2(PushAndPullSokobanEnv):
@@ -176,11 +189,12 @@ class PushAndPull_Env_v2(PushAndPullSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(PushAndPull_Env_v2, self).__init__(
-            dim_room=(7, 7), max_steps=150, num_boxes=1,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 2)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(PushAndPull_Env_v2, self).__init__(**kwargs)
 
 
 class PushAndPull_Env_v3(PushAndPullSokobanEnv):
@@ -188,11 +202,12 @@ class PushAndPull_Env_v3(PushAndPullSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(PushAndPull_Env_v3, self).__init__(
-            dim_room=(7, 7), max_steps=150, num_boxes=3,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 150)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(PushAndPull_Env_v3, self).__init__(**kwargs)
 
 
 class PushAndPull_Env_v4(PushAndPullSokobanEnv):
@@ -200,11 +215,12 @@ class PushAndPull_Env_v4(PushAndPullSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(PushAndPull_Env_v4, self).__init__(
-            dim_room=(13, 11), max_steps=300, num_boxes=4,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 300)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 4)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(PushAndPull_Env_v4, self).__init__(**kwargs)
 
 
 class PushAndPull_Env_v5(PushAndPullSokobanEnv):
@@ -212,11 +228,12 @@ class PushAndPull_Env_v5(PushAndPullSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(PushAndPull_Env_v5, self).__init__(
-            dim_room=(13, 11), max_steps=300, num_boxes=5,
-            num_gen_steps=50
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 300)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 5)
+        kwargs['num_gen_steps'] = kwargs.get('num_gen_steps', 50)
+        super(PushAndPull_Env_v5, self).__init__(**kwargs)
 
 
 class TwoPlayer_Env0(TwoPlayerSokobanEnv):
