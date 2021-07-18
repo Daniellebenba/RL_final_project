@@ -3,8 +3,6 @@ from .sokoban_env_fixed_targets import FixedTargetsSokobanEnv
 from .sokoban_env_pull import PushAndPullSokobanEnv
 from .sokoban_env_two_player import TwoPlayerSokobanEnv
 from .boxoban_env import BoxobanEnv
-from .sokoban_env_reverse import ReverseSokobanEnv
-from .sokoban_env_pull_reverse import ReversePushAndPullSokobanEnv
 
 
 class SokobanEnv1(SokobanEnv):
@@ -16,7 +14,6 @@ class SokobanEnv1(SokobanEnv):
         kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
         kwargs['max_steps'] = kwargs.get('max_steps', 200)
         super(SokobanEnv1, self).__init__(**kwargs)
-
 
 
 class SokobanEnv2(SokobanEnv):
@@ -35,7 +32,7 @@ class SokobanEnv_Small0(SokobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
-    
+
     def __init__(self, **kwargs):
         kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
         kwargs['max_steps'] = kwargs.get('max_steps', 200)
@@ -137,6 +134,7 @@ class FixedTargets_Env_v2(FixedTargetsSokobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
+
     def __init__(self, **kwargs):
         kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
         kwargs['max_steps'] = kwargs.get('max_steps', 150)
@@ -241,11 +239,11 @@ class TwoPlayer_Env0(TwoPlayerSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(TwoPlayer_Env0, self).__init__(
-            num_boxes=2, max_steps=200,
-            dim_room=(7, 7)
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 2)
+        super(TwoPlayer_Env0, self).__init__(**kwargs)
 
 
 class TwoPlayer_Env1(TwoPlayerSokobanEnv):
@@ -253,11 +251,11 @@ class TwoPlayer_Env1(TwoPlayerSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(TwoPlayer_Env1, self).__init__(
-            num_boxes=3, max_steps=200,
-            dim_room=(7, 7)
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (7, 7))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        super(TwoPlayer_Env1, self).__init__(**kwargs)
 
 
 class TwoPlayer_Env2(TwoPlayerSokobanEnv):
@@ -265,11 +263,11 @@ class TwoPlayer_Env2(TwoPlayerSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(TwoPlayer_Env2, self).__init__(
-            num_boxes=3, max_steps=200,
-            dim_room=(10, 10)
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (10, 10))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        super(TwoPlayer_Env2, self).__init__(**kwargs)
 
 
 class TwoPlayer_Env3(TwoPlayerSokobanEnv):
@@ -277,11 +275,11 @@ class TwoPlayer_Env3(TwoPlayerSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(TwoPlayer_Env3, self).__init__(
-            num_boxes=4, max_steps=200,
-            dim_room=(10, 10)
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (10, 10))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 4)
+        super(TwoPlayer_Env3, self).__init__(**kwargs)
 
 
 class TwoPlayer_Env4(TwoPlayerSokobanEnv):
@@ -289,11 +287,11 @@ class TwoPlayer_Env4(TwoPlayerSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(TwoPlayer_Env4, self).__init__(
-            num_boxes=3, max_steps=200,
-            dim_room=(13, 11)
-        )
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 3)
+        super(TwoPlayer_Env4, self).__init__(**kwargs)
 
 
 
@@ -302,70 +300,62 @@ class TwoPlayer_Env5(TwoPlayerSokobanEnv):
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(TwoPlayer_Env5, self).__init__(
-            num_boxes=4, max_steps=200,
-            dim_room=(13, 11)
-        )
-
+    def __init__(self, **kwargs):
+        kwargs['dim_room'] = kwargs.get('dim_room', (13, 11))
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['num_boxes'] = kwargs.get('num_boxes', 4)
+        super(TwoPlayer_Env5, self).__init__(**kwargs)
 
 class Boxban_Env0(BoxobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(Boxban_Env0, self).__init__(max_steps=200, difficulty='unfiltered', split='train')
+    def __init__(self, **kwargs):
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['difficulty'] = kwargs.get('difficulty', 'unfiltered')
+        kwargs['split'] = kwargs.get('split', 'train')
+        super(Boxban_Env0, self).__init__(**kwargs)
 
 class Boxban_Env0_val(BoxobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(Boxban_Env0_val, self).__init__(max_steps=200, difficulty='unfiltered', split='valid')
+    def __init__(self, **kwargs):
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['difficulty'] = kwargs.get('difficulty', 'unfiltered')
+        kwargs['split'] = kwargs.get('split', 'valid')
+        super(Boxban_Env0_val, self).__init__(**kwargs)
 
 class Boxban_Env0_test(BoxobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(Boxban_Env0_test, self).__init__(max_steps=200, difficulty='unfiltered', split='test')
+    def __init__(self, **kwargs):
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['difficulty'] = kwargs.get('difficulty', 'unfiltered')
+        kwargs['split'] = kwargs.get('split', 'test')
+        super(Boxban_Env0_test, self).__init__(**kwargs)
 
 class Boxban_Env1(BoxobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(Boxban_Env1, self).__init__(max_steps=200, difficulty='medium')
+    def __init__(self, **kwargs):
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['difficulty'] = kwargs.get('difficulty', 'medium')
+        super(Boxban_Env1, self).__init__(**kwargs)
 
 class Boxban_Env1_val(BoxobanEnv):
     metadata = {
         'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
     }
 
-    def __init__(self):
-        super(Boxban_Env1_val, self).__init__(max_steps=200, difficulty='medium', split='valid')
-
-class ReversePushAndPull_Env_v0(ReversePushAndPullSokobanEnv):
-    metadata = {
-        'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
-    }
-
-    def __init__(self):
-        super(ReversePushAndPull_Env_v0, self).__init__(
-            dim_room=(7, 7), max_steps=150, num_boxes=1,
-            num_gen_steps=50
-        )
-
-class ReverseSokobanEnv_v0(ReverseSokobanEnv):
-    metadata = {
-        'render.modes': ['human', 'rgb_array', 'tiny_human', 'tiny_rgb_array'],
-    }
-
-    def __init__(self):
-        super(ReverseSokobanEnv_v0, self).__init__(
-            dim_room=(7, 7), max_steps=200, num_boxes=1
-        )
+    def __init__(self, **kwargs):
+        kwargs['max_steps'] = kwargs.get('max_steps', 200)
+        kwargs['difficulty'] = kwargs.get('difficulty', 'medium')
+        kwargs['split'] = kwargs.get('split', 'valid')
+        super(Boxban_Env1_val, self).__init__(**kwargs)
